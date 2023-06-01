@@ -5,4 +5,9 @@ function cambiar(monto,efectivo){
     return efectivo-monto;
 }
 
-export {cambiar, verificar};
+function devolverCorteCambio(monto,efectivo){
+    var cambio = cambiar(monto,efectivo);
+    return [cambio];
+}
+
+export {cambiar, verificar, devolverCorteCambio};
