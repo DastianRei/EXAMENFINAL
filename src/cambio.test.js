@@ -1,6 +1,7 @@
+import cambiar from "./cambio";
 
 describe("Cambiar", () => {
     it("Deberia devolver el cambio", () => {
-      expect(true).toEqual(true);
+      expect(cambiar(10,15)).toEqual(5);
     });
   });
