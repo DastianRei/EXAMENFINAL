@@ -1,15 +1,11 @@
-import sumar from "./sumador";
+import cambiar from "./cambio";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const montoVenta = document.querySelector("#monto-venta");
+const efectivo = document.querySelector("#efectivo");
+const formularioCambio = document.querySelector("#cambiar-form");
+const divResultado = document.querySelector("#resultado-div");
 
-form.addEventListener("submit", (event) => {
+formularioCambio.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  divResultado.innerHTML = "<p> Cambio: " + cambiar(montoVenta.value, efectivo.value) + "</p>";
 });
