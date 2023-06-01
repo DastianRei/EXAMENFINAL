@@ -1,4 +1,4 @@
-import cambiar from "./cambio";
+import { cambiar, verificar } from "./cambio";
 
 const montoVenta = document.querySelector("#monto-venta");
 const efectivo = document.querySelector("#efectivo");
@@ -7,5 +7,10 @@ const divResultado = document.querySelector("#resultado-div");
 
 formularioCambio.addEventListener("submit", (event) => {
   event.preventDefault();
-  divResultado.innerHTML = "<p> Cambio: " + cambiar(montoVenta.value, efectivo.value) + "</p>";
+  if (verificar(montoVenta.value, efectivo.value)) {
+    divResultado.innerHTML =
+      "<p> Cambio: " + cambiar(montoVenta.value, efectivo.value) + "</p>";
+  } else {
+    alert("Ingrese ambos datos");
+  }
 });
